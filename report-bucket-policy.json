@@ -1,0 +1,11 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {"Sid": "DenyInsecureTransport", "Effect": "Deny", "Principal": "*", "Action": "s3:*",
+     "Resource": ["arn:aws:s3:::REPORT_BUCKET", "arn:aws:s3:::REPORT_BUCKET/*"],
+     "Condition": {"Bool": {"aws:SecureTransport": "false"}}},
+    {"Sid": "DenyUnencryptedUploads", "Effect": "Deny", "Principal": "*", "Action": "s3:PutObject",
+     "Resource": "arn:aws:s3:::REPORT_BUCKET/*",
+     "Condition": {"Null": {"s3:x-amz-server-side-encryption": "true"}}}
+  ]
+}

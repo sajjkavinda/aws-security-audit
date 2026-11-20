@@ -1,0 +1,13 @@
+# Lambda build artifact
+audit.zip
+
+# Lambda invoke output
+out.json
+
+# Downloaded reports
+report.html
+report.json
+findings.csv
+
+# macOS
+.DS_Store
